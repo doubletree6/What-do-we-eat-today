@@ -5,7 +5,7 @@ import requests
 import json
 
 def dishes():
-    token = 'a78d6ed16b824bcbb5cef0b60b20f79b'
+    token = environ.get('token')
     if not token:
         # If the token is not present, stop sending push notification
         return 'PushPlus: No token configured, cannot send push notification.'
