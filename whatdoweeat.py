@@ -1,20 +1,35 @@
+
 import random
 import datetime
+import requests
+import json
 
-# List of dishes
-dishes = ["自助", "茶香鸡米饭", "羊汤", "泡馍", "拉面", "水饺", "BONUS TIME！", "炒菜", "鸡公煲", "板面", "冒菜", "馄饨", "炸串", "牛杂面", "炒饭"]
+def dishes():
+    token = 'a78d6ed16b824bcbb5cef0b60b20f79b'
+    if not token:
+        # If the token is not present, stop sending push notification
+        return 'PushPlus: No token configured, cannot send push notification.'
+    url = 'http://www.pushplus.plus/send/'
+    # List of dishes
+    dishes = ["自助", "茶香鸡米饭", "羊汤", "泡馍", "拉面", "水饺", "BONUS TIME！", "炒菜", "鸡公煲", "板面", "冒菜", "馄饨", "炸串", "牛杂面", "炒饭"]
+    afternoon_dishes = ["沙拉", "炸串", "牛杂面"]
 
-# Define afternoon dishes
-afternoon_dishes = ["沙拉", "炸串", "牛杂面"]
+    current_hour = datetime.datetime.now().hour
+    if current_hour < 12:
+        dishes = [dish for dish in dishes if dish not in afternoon_dishes]
 
-# Get current hour
-current_hour = datetime.datetime.now().hour
+    # Randomly choose a dish from list
+    chosen_dish = random.choice(dishes)
 
-# If morning, remove afternoon dishes from the list
-if current_hour < 12:
-    dishes = [dish for dish in dishes if dish not in afternoon_dishes]
+    data = {
+        "token": token,
+        "title": "这顿吃什么？",
+        "content": "这顿吃 " + chosen_dish,
+    }
 
-# Randomly choose a dish from list
-chosen_dish = random.choice(dishes)
+    headers = {'Content-Type': 'application/json'}
+    rsp = requests.post(url, data=json.dumps(data), headers=headers)
+    return rsp.text
 
-print("这顿吃 " + chosen_dish)
+if __name__ == '__main__':
+    print(dishes())
