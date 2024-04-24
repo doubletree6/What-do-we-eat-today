@@ -8,7 +8,7 @@ from json import dumps
 from requests import post
 
 def dishes():
-    token = environ.get('token')
+    token = 'a78d6ed16b824bcbb5cef0b60b20f79b'
     if not token:
         # If the token is not present, stop sending push notification
         return 'PushPlus: No token configured, cannot send push notification.'
