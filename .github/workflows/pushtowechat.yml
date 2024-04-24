@@ -31,5 +31,7 @@ jobs:
 
       # Runs a set of commands using the runners shell
       - name: push what do we eat?
+        env: 
+          token: ${{ secrets.TOKEN }} 
         run: |
           python whatdoweeat.py
