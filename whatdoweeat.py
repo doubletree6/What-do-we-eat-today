@@ -2,7 +2,9 @@
 import random
 import datetime
 import requests
-import json
+from os import environ
+from json import dumps
+from requests import post
 
 def dishes():
     token = environ.get('token')
