@@ -5,7 +5,7 @@ name: pushtowechat
 # Controls when the workflow will run
 on:
   schedule:
-    - cron: '20 11,17 * ? MON-FRI'
+    - corn: "20 11,17 * ? MON-FRI"
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -13,7 +13,7 @@ on:
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   # This workflow contains a single job called "build"
-  build:
+  whatdoweeat:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
 
