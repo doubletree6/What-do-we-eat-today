@@ -18,7 +18,7 @@ def dishes():
     afternoon_dishes = ["沙拉", "炸串", "牛杂面"]
 
     current_hour = datetime.datetime.now().hour
-    if current_hour < 12:
+    if current_hour < 6:
         dishes = [dish for dish in dishes if dish not in afternoon_dishes]
 
     # Randomly choose a dish from list
