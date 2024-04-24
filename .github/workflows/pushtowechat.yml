@@ -34,3 +34,8 @@ jobs:
           token: ${{ secrets.TOKEN }} 
         run: |
           python whatdoweeat.py
+      - name: step4 //设置对应的告警
+          if: ${{ failure() }}
+          run: |
+            author=$(git show -s --format=%an)
+            curl --location --request POsT xxxx
