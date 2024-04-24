@@ -35,7 +35,7 @@ jobs:
         run: |
           python whatdoweeat.py
       - name: step4 //设置对应的告警
-          if: ${{ failure() }}
-          run: |
+        if: ${{ failure() }}
+        run: |
             author=$(git show -s --format=%an)
-            curl --location --request POsT xxxx
+            curl --location --request POST xxxx
