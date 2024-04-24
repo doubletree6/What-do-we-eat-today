@@ -1,10 +1,11 @@
 # This is a basic workflow to help you get started with Actions
 
-name: pushtowechat
+name: 这顿吃啥
 
 # Controls when the workflow will run
 on:
-
+  schedule:
+    - corn: "20 11,17 * ? MON-FRI"
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
