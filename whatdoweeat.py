@@ -14,7 +14,7 @@ def dishes():
         return 'PushPlus: No token configured, cannot send push notification.'
     url = 'http://www.pushplus.plus/send/'
     # List of dishes
-    dishes = ["自助", "茶香鸡米饭", "羊汤", "泡馍", "拉面", "水饺", "BONUS TIME！", "炒菜", "鸡公煲", "板面", "冒菜", "馄饨", "炸串", "牛杂面", "炒饭"]
+    dishes = ["自助", "茶香鸡米饭", "羊汤", "泡馍", "拉面", "水饺", "BONUS TIME！", "炒菜", "鸡公煲", "板面", "冒菜", "馄饨", "炸串", "牛杂面", "炒饭", "烤鸭饭"]
     afternoon_dishes = ["沙拉", "炸串", "牛杂面"]
 
     current_hour = datetime.datetime.now().hour
