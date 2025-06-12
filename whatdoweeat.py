@@ -26,7 +26,7 @@ def dishes():
 
     data = {
         "token": token,
-        "title": "这顿吃什么？",
+        "title": "这顿吃 " + chosen_dish",
         "content": "这顿吃 " + chosen_dish,
     }
 
